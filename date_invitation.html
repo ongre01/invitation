@@ -435,194 +435,85 @@
       font-size: 13px;
     }
 
-    .choice-list {
-      display: grid;
-      gap: 10px;
-      overflow-y: auto;
-      padding: 3px 3px 5px;
-      max-height: 355px;
-      scrollbar-width: thin;
-      scrollbar-color: #f4c4d3 transparent;
-    }
+    .schedule-picker {
+      margin: auto 3px;
+      padding: 24px 20px;
 
-    .choice-label {
-      display: block;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .choice-label input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .place-card {
-      position: relative;
-      padding: 15px 15px 14px;
-
-      display: flex;
-      align-items: center;
-      gap: 13px;
-
-      text-align: left;
-
-      background: rgba(255,255,255,.88);
-      border: 1.5px solid #f4d9e2;
-      border-radius: 21px;
-
-      box-shadow: 0 7px 20px rgba(202, 110, 137, .07);
-
-      transition:
-        transform .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
-    }
-
-    .choice-label:hover .place-card {
-      transform: translateY(-2px);
-    }
-
-    .choice-label input:checked + .place-card {
-      border-color: #ff8eb0;
       background:
-        linear-gradient(145deg, #fff, #fff2f7);
+        linear-gradient(145deg, rgba(255,255,255,.96), rgba(255,242,247,.94));
+      border: 1.5px solid #f4d9e2;
+      border-radius: 24px;
 
       box-shadow:
-        0 10px 24px rgba(255, 111, 156, .17),
-        inset 0 0 0 2px rgba(255,255,255,.65);
+        0 12px 30px rgba(202, 110, 137, .10),
+        inset 0 0 0 2px rgba(255,255,255,.55);
     }
 
-    .place-emoji {
-      width: 50px;
-      height: 50px;
-      flex: 0 0 50px;
+    .schedule-label {
+      display: block;
+      margin-bottom: 10px;
 
-      display: grid;
-      place-items: center;
-
-      font-size: 25px;
-      background: #fff2f6;
-      border-radius: 17px;
-    }
-
-    .place-content {
-      min-width: 0;
-      flex: 1;
-    }
-
-    .place-name {
-      margin-bottom: 4px;
-      font-size: 15px;
+      color: #9a6c7a;
+      font-size: 13px;
       font-weight: 900;
-      letter-spacing: -.035em;
     }
 
-    .place-desc {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .place-map {
-      display: inline-block;
-      margin-top: 7px;
-
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--pink-deep);
-      text-decoration: none;
-    }
-
-
-    .place-tags {
+    .schedule-input-wrap {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .place-tag {
-      display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 5px 8px;
-
-      font-size: 10.5px;
-      font-weight: 800;
-      line-height: 1;
-
-      color: #9a6c7a;
-      background: #fff7fa;
-      border: 1px solid #f4d4df;
-      border-radius: 999px;
+      gap: 12px;
     }
 
-    .place-details {
-      display: grid;
-      gap: 5px;
-      margin-top: 9px;
-      padding-top: 9px;
-      border-top: 1px dashed #f1d7df;
-    }
-
-    .place-detail {
-      display: grid;
-      grid-template-columns: 18px 52px 1fr;
-      gap: 5px;
-      align-items: start;
-
-      font-size: 11px;
-      line-height: 1.45;
-      color: #8f737c;
-    }
-
-    .place-detail strong {
-      font-weight: 800;
-      color: #9a6c7a;
-    }
-
-    .place-detail span:last-child {
-      min-width: 0;
-      word-break: keep-all;
-    }
-
-    .place-note {
-      margin-top: 8px;
-      padding: 8px 10px;
-
-      font-size: 10.5px;
-      line-height: 1.5;
-      color: #9a7480;
-
-      background: #fff9f2;
-      border: 1px solid #f6e3cb;
-      border-radius: 12px;
-    }
-
-    .radio-heart {
-      width: 29px;
-      height: 29px;
-      flex: 0 0 29px;
+    .schedule-input-icon {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
 
       display: grid;
       place-items: center;
 
-      font-size: 14px;
-
-      color: #dfc1ca;
-      background: #fff;
-      border: 1px solid #ead7dd;
-      border-radius: 50%;
-
-      transition: .2s ease;
+      font-size: 24px;
+      background: #fff2f6;
+      border-radius: 16px;
     }
 
-    .choice-label input:checked + .place-card .radio-heart {
-      color: #fff;
-      border-color: var(--pink);
-      background: var(--pink);
-      transform: scale(1.08);
+    .schedule-input {
+      width: 100%;
+      min-width: 0;
+      height: 52px;
+      padding: 0 14px;
+
+      color: var(--brown);
+      font-size: 16px;
+      font-weight: 800;
+
+      color-scheme: light;
+      background: #fff;
+      border: 1.5px solid #f1cad7;
+      border-radius: 15px;
+      outline: none;
+
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .schedule-input:focus {
+      border-color: #ff8eb0;
+      box-shadow: 0 0 0 4px rgba(255, 142, 176, .14);
+    }
+
+    .schedule-input::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      opacity: .65;
+    }
+
+    .picker-hint {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+      text-align: center;
     }
 
     .step-bottom {
@@ -871,18 +762,8 @@
         font-size: 55px;
       }
 
-      .choice-list {
-        max-height: 390px;
-      }
-
-      .place-card {
-        padding: 13px;
-      }
-
-      .place-emoji {
-        width: 46px;
-        height: 46px;
-        flex-basis: 46px;
+      .schedule-picker {
+        padding: 21px 16px;
       }
     }
   </style>
@@ -938,44 +819,71 @@
       </div>
     </section>
 
-    <!-- STEP 2 -->
+    <!-- STEP 2: 날짜 선택 -->
     <section class="step" id="step2">
       <div class="step-head">
-        <div class="mini-character">🍽️</div>
-        <h2 class="step-title">그럼 저녁은<br>어디가 좋을까요?</h2>
-        <p class="step-desc">끌리는 곳 하나만 골라주세요 ♡</p>
+        <div class="mini-character">📅</div>
+        <h2 class="step-title">우리 언제<br>만나면 좋을까요?</h2>
+        <p class="step-desc">함께하고 싶은 날짜를 골라주세요 ♡</p>
       </div>
 
-      <div class="choice-list" id="restaurantList"></div>
+      <div class="schedule-picker">
+        <label class="schedule-label" for="dateInput">데이트 날짜</label>
+        <div class="schedule-input-wrap">
+          <span class="schedule-input-icon" aria-hidden="true">🌷</span>
+          <input
+            class="schedule-input"
+            id="dateInput"
+            type="date"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <p class="picker-hint">오늘부터 선택할 수 있어요</p>
+      </div>
 
       <div class="step-bottom">
         <button
           class="btn btn-primary next-btn"
-          id="restaurantNext"
+          id="dateNext"
           type="button"
           disabled>
-          이 식당이 좋아요 💗
+          이날 만나요 💗
         </button>
       </div>
     </section>
 
-    <!-- STEP 3 -->
+    <!-- STEP 3: 시간 선택 -->
     <section class="step" id="step3">
       <div class="step-head">
-        <div class="mini-character">☕</div>
-        <h2 class="step-title">밥 먹고<br>카페도 같이 가요!</h2>
-        <p class="step-desc">분위기 좋은 곳으로 하나 골라주세요 ✨</p>
+        <div class="mini-character">⏰</div>
+        <h2 class="step-title">몇 시에<br>만나면 좋을까요?</h2>
+        <p class="step-desc">편한 시간을 골라주세요 ✨</p>
       </div>
 
-      <div class="choice-list" id="cafeList"></div>
+      <div class="schedule-picker">
+        <label class="schedule-label" for="timeInput">데이트 시간</label>
+        <div class="schedule-input-wrap">
+          <span class="schedule-input-icon" aria-hidden="true">💕</span>
+          <input
+            class="schedule-input"
+            id="timeInput"
+            type="time"
+            step="1800"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <p class="picker-hint">30분 단위로 선택할 수 있어요</p>
+      </div>
 
       <div class="step-bottom">
         <button
           class="btn btn-primary next-btn"
-          id="cafeNext"
+          id="timeNext"
           type="button"
           disabled>
-          여기까지 완벽해요 💕
+          이 시간으로 정할게요 💕
         </button>
       </div>
     </section>
@@ -985,7 +893,7 @@
       <div class="final">
         <div class="final-badge">💌</div>
 
-        <h2 class="step-title">데이트 코스<br>정해졌어요!</h2>
+        <h2 class="step-title">데이트 약속<br>정해졌어요!</h2>
 
         <p class="subtitle">
           골라줘서 고마워요.<br>
@@ -993,18 +901,18 @@
         </p>
 
         <div class="summary">
-          <div class="summary-title">우리의 데이트 코스 🌷</div>
+          <div class="summary-title">우리의 데이트 약속 🌷</div>
 
           <div class="summary-row">
-            <span>🍽️</span>
-            <span class="summary-key">식당</span>
-            <span class="summary-value" id="summaryRestaurant">-</span>
+            <span>📅</span>
+            <span class="summary-key">날짜</span>
+            <span class="summary-value" id="summaryDate">-</span>
           </div>
 
           <div class="summary-row">
-            <span>☕</span>
-            <span class="summary-key">카페</span>
-            <span class="summary-value" id="summaryCafe">-</span>
+            <span>⏰</span>
+            <span class="summary-key">시간</span>
+            <span class="summary-value" id="summaryTime">-</span>
           </div>
         </div>
 
@@ -1037,15 +945,15 @@
 
       <div class="capture-list">
         <div class="capture-row">
-          <span>🍽️</span>
-          <span>식당</span>
-          <strong id="captureRestaurant">-</strong>
+          <span>📅</span>
+          <span>날짜</span>
+          <strong id="captureDate">-</strong>
         </div>
 
         <div class="capture-row">
-          <span>☕</span>
-          <span>카페</span>
-          <strong id="captureCafe">-</strong>
+          <span>⏰</span>
+          <span>시간</span>
+          <strong id="captureTime">-</strong>
         </div>
       </div>
 
@@ -1058,114 +966,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <script>
-    /*
-      ============================================================
-      💗 장소 / 문구 설정
-      ============================================================
-
-      아래 CONFIG만 수정하면 화면의 장소 리스트가 자동으로 바뀝니다.
-
-      추가:
-      {
-        name: "장소 이름",
-        description: "짧은 설명",
-        category: "음식/카페 카테고리",
-        parking: "주차 가능 / 2대 가능 / 인근 공영주차장 등",
-        hours: "17:00 ~ 22:00",
-        note: "예약 추천 / 분위기 좋음 등",
-        url: "네이버 지도 링크",
-        icon: "🍝"
-      }
-
-      category / parking / hours / note는 선택 항목입니다.
-      빈 문자열("")이면 화면에 표시되지 않습니다.
-
-      삭제:
-      해당 { ... } 블록을 삭제하면 됩니다.
-
-      ============================================================
-    */
-
     const CONFIG = {
       introMessage:
-        "제가 가보고 싶은 곳을 몇 군데 골라봤어요.<br>" +
-        "마음에 드는 코스로 직접 골라주세요 🌷",
-
-      restaurants: [
-        {
-          name: "기분 좋은 식탁",
-          description: "이탈리아 음식",
-          category: "이탈리안",
-          parking: "",
-          hours: "",
-          note: "",
-          url: "https://naver.me/5IS9TIRq",
-          icon: "🍝"
-        },
-        {
-          name: "미야자키",
-          description: "고기",
-          category: "고기 / 구이",
-          parking: "",
-          hours: "",
-          note: "",
-          url: "https://naver.me/GL8J3LNO",
-          icon: "🥩"
-        },
-        {
-          name: "이당비스트로",
-          description: "스테이크",
-          category: "스테이크 / 비스트로",
-          parking: "",
-          hours: "",
-          note: "",
-          url: "https://naver.me/Fmf6xN9l",
-          icon: "🍷"
-        }
-      ],
-
-      cafes: [
-        {
-          name: "The november 라운지 수지동천점",
-          description: "카페",
-          category: "라운지 카페",
-          parking: "",
-          hours: "",
-          note: "",
-          url: "https://naver.me/FPn5jiq2",
-          icon: "☕"
-        },
-        {
-          name: "The november 라운지 용인둔전점",
-          description: "카페",
-          category: "라운지 카페",
-          parking: "",
-          hours: "",
-          note: "",
-          url: "https://naver.me/5WOQcyHg",
-          icon: "🌙"
-        },
-        {
-          name: "KIROTTI 기로띠",
-          description: "카페",
-          category: "베이커리 카페",
-          parking: "",
-          hours: "",
-          note: "",
-          url: "https://naver.me/57VZ8Dfs",
-          icon: "🥐"
-        },
-        {
-          name: "정그리다",
-          description: "카페",
-          category: "감성 카페",
-          parking: "",
-          hours: "",
-          note: "",
-          url: "https://naver.me/Fw7iuOOl",
-          icon: "🌿"
-        }
-      ]
+        "우리 둘이 좋은 시간을 보낼 수 있도록<br>" +
+        "만나고 싶은 날짜와 시간을 골라주세요 🌷"
     };
 
 
@@ -1174,8 +978,8 @@
        ============================================================ */
 
     const state = {
-      restaurant: null,
-      cafe: null
+      date: "",
+      time: ""
     };
 
     let currentStep = 1;
@@ -1185,17 +989,17 @@
     const $ = (selector) => document.querySelector(selector);
 
     const introMessage = $("#introMessage");
-    const restaurantList = $("#restaurantList");
-    const cafeList = $("#cafeList");
+    const dateInput = $("#dateInput");
+    const timeInput = $("#timeInput");
 
-    const restaurantNext = $("#restaurantNext");
-    const cafeNext = $("#cafeNext");
+    const dateNext = $("#dateNext");
+    const timeNext = $("#timeNext");
 
-    const summaryRestaurant = $("#summaryRestaurant");
-    const summaryCafe = $("#summaryCafe");
+    const summaryDate = $("#summaryDate");
+    const summaryTime = $("#summaryTime");
 
-    const captureRestaurant = $("#captureRestaurant");
-    const captureCafe = $("#captureCafe");
+    const captureDate = $("#captureDate");
+    const captureTime = $("#captureTime");
 
     const floatingLayer = $("#floatingLayer");
     const confettiLayer = $("#confettiLayer");
@@ -1205,113 +1009,40 @@
 
     introMessage.innerHTML = CONFIG.introMessage;
 
+    function getLocalDateValue(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
 
-    function escapeHtml(value) {
-      return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+      return `${year}-${month}-${day}`;
     }
 
 
-    function renderPlaces(items, groupName, target) {
-      if (!items.length) {
-        target.innerHTML =
-          '<div style="padding:30px;text-align:center;color:#aa8993;">' +
-          '등록된 장소가 없어요 🥺' +
-          '</div>';
-        return;
-      }
+    function formatDate(value) {
+      if (!value) return "-";
 
-      target.innerHTML = items.map((item, index) => {
-        const tags = [
-          item.category ? `<span class="place-tag">🏷️ ${escapeHtml(item.category)}</span>` : "",
-          item.parking ? `<span class="place-tag">🚗 ${escapeHtml(item.parking)}</span>` : ""
-        ].filter(Boolean).join("");
+      const [year, month, day] = value.split("-").map(Number);
+      const date = new Date(year, month - 1, day);
+      const weekday = new Intl.DateTimeFormat("ko-KR", {
+        weekday: "short"
+      }).format(date);
 
-        const details = [
-          item.hours
-            ? `<div class="place-detail">
-                 <span>🕒</span>
-                 <strong>영업</strong>
-                 <span>${escapeHtml(item.hours)}</span>
-               </div>`
-            : "",
-          item.parking
-            ? `<div class="place-detail">
-                 <span>🅿️</span>
-                 <strong>주차</strong>
-                 <span>${escapeHtml(item.parking)}</span>
-               </div>`
-            : ""
-        ].filter(Boolean).join("");
-
-        return `
-          <label class="choice-label">
-            <input
-              type="radio"
-              name="${groupName}"
-              value="${escapeHtml(item.name)}"
-              data-index="${index}"
-            />
-
-            <div class="place-card">
-              <div class="place-emoji">
-                ${escapeHtml(item.icon || "📍")}
-              </div>
-
-              <div class="place-content">
-                <div class="place-name">
-                  ${escapeHtml(item.name)}
-                </div>
-
-                <div class="place-desc">
-                  ${escapeHtml(item.description || "")}
-                </div>
-
-                ${tags ? `<div class="place-tags">${tags}</div>` : ""}
-                ${details ? `<div class="place-details">${details}</div>` : ""}
-
-                ${
-                  item.note
-                    ? `<div class="place-note">💡 ${escapeHtml(item.note)}</div>`
-                    : ""
-                }
-
-                ${
-                  item.url
-                    ? `<a
-                         class="place-map"
-                         href="${escapeHtml(item.url)}"
-                         target="_blank"
-                         rel="noopener">
-                         네이버 지도 보기 ↗
-                       </a>`
-                    : ""
-                }
-              </div>
-
-              <div class="radio-heart">♥</div>
-            </div>
-          </label>
-        `;
-      }).join("");
+      return `${year}년 ${month}월 ${day}일 (${weekday})`;
     }
 
 
-    renderPlaces(
-      CONFIG.restaurants,
-      "restaurant",
-      restaurantList
-    );
+    function formatTime(value) {
+      if (!value) return "-";
 
-    renderPlaces(
-      CONFIG.cafes,
-      "cafe",
-      cafeList
-    );
+      const [hour, minute] = value.split(":").map(Number);
+      const period = hour < 12 ? "오전" : "오후";
+      const displayHour = hour % 12 || 12;
+
+      return `${period} ${displayHour}:${String(minute).padStart(2, "0")}`;
+    }
+
+
+    dateInput.min = getLocalDateValue(new Date());
 
 
     function goStep(step) {
@@ -1466,60 +1197,48 @@
 
 
     /* ============================================================
-       장소 선택
+       날짜 / 시간 선택
        ============================================================ */
 
-    document.addEventListener("click", event => {
-      if (event.target.closest(".place-map")) {
-        event.stopPropagation();
-      }
+    dateInput.addEventListener("input", () => {
+      const isAvailable =
+        dateInput.value && dateInput.validity.valid;
+
+      state.date = isAvailable ? dateInput.value : "";
+      dateNext.disabled = !state.date;
     });
 
 
-    document.addEventListener("change", event => {
-      const input = event.target;
-
-      if (!input.matches('input[type="radio"]')) return;
-
-      if (input.name === "restaurant") {
-        state.restaurant = input.value;
-        restaurantNext.disabled = false;
-      }
-
-      if (input.name === "cafe") {
-        state.cafe = input.value;
-        cafeNext.disabled = false;
-      }
+    timeInput.addEventListener("input", () => {
+      state.time = timeInput.validity.valid ? timeInput.value : "";
+      timeNext.disabled = !state.time;
     });
 
 
-    restaurantNext.addEventListener("click", () => {
-      if (!state.restaurant) return;
+    dateNext.addEventListener("click", () => {
+      if (!state.date) return;
 
       launchMiniHearts();
       goStep(3);
     });
 
 
-    cafeNext.addEventListener("click", () => {
-      if (!state.cafe) return;
+    timeNext.addEventListener("click", () => {
+      if (!state.time) return;
 
       showFinal();
     });
 
 
     function showFinal() {
-      summaryRestaurant.textContent =
-        state.restaurant || "-";
+      const selectedDate = formatDate(state.date);
+      const selectedTime = formatTime(state.time);
 
-      summaryCafe.textContent =
-        state.cafe || "-";
+      summaryDate.textContent = selectedDate;
+      summaryTime.textContent = selectedTime;
 
-      captureRestaurant.textContent =
-        state.restaurant || "-";
-
-      captureCafe.textContent =
-        state.cafe || "-";
+      captureDate.textContent = selectedDate;
+      captureTime.textContent = selectedTime;
 
       goStep(4);
       launchConfetti(65);
@@ -1651,15 +1370,15 @@
 
     $("#copyBtn").addEventListener("click", async () => {
       const text =
-`데이트 코스 골랐어요 💕
+`데이트 약속 정했어요 💕
 
-🍽️ 식당
-${state.restaurant}
+📅 날짜
+${formatDate(state.date)}
 
-☕ 카페
-${state.cafe}
+⏰ 시간
+${formatTime(state.time)}
 
-이 코스로 같이 가요 :)`;
+이때 같이 만나요 :)`;
 
       try {
         await navigator.clipboard.writeText(text);
@@ -1710,17 +1429,14 @@ ${state.cafe}
 
 
     $("#restartBtn").addEventListener("click", () => {
-      state.restaurant = null;
-      state.cafe = null;
+      state.date = "";
+      state.time = "";
 
-      document.querySelectorAll(
-        'input[type="radio"]'
-      ).forEach(input => {
-        input.checked = false;
-      });
+      dateInput.value = "";
+      timeInput.value = "";
 
-      restaurantNext.disabled = true;
-      cafeNext.disabled = true;
+      dateNext.disabled = true;
+      timeNext.disabled = true;
 
       resetRunawayButton();
       goStep(1);
