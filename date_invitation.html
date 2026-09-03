@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,8 +51,8 @@
 
       color: var(--brown);
       background:
-        radial-gradient(circle at 12% 8%, rgba(255,255,255,.95) 0 5%, transparent 22%),
-        radial-gradient(circle at 90% 12%, rgba(255,235,197,.55), transparent 25%),
+        radial-gradient(circle at 12% 8%, rgba(255, 255, 255, .95) 0 5%, transparent 22%),
+        radial-gradient(circle at 90% 12%, rgba(255, 235, 197, .55), transparent 25%),
         linear-gradient(145deg, var(--bg1), var(--bg2) 48%, var(--bg3));
       overflow-x: hidden;
     }
@@ -112,14 +113,41 @@
       animation: breathe 3.5s ease-in-out infinite;
     }
 
-    .sparkle.s1 { left: 9%; top: 11%; }
-    .sparkle.s2 { right: 11%; top: 19%; animation-delay: .8s; }
-    .sparkle.s3 { left: 12%; bottom: 12%; animation-delay: 1.6s; }
-    .sparkle.s4 { right: 9%; bottom: 17%; animation-delay: 2.2s; }
+    .sparkle.s1 {
+      left: 9%;
+      top: 11%;
+    }
+
+    .sparkle.s2 {
+      right: 11%;
+      top: 19%;
+      animation-delay: .8s;
+    }
+
+    .sparkle.s3 {
+      left: 12%;
+      bottom: 12%;
+      animation-delay: 1.6s;
+    }
+
+    .sparkle.s4 {
+      right: 9%;
+      bottom: 17%;
+      animation-delay: 2.2s;
+    }
 
     @keyframes breathe {
-      0%, 100% { transform: scale(.9) rotate(-6deg); opacity: .35; }
-      50% { transform: scale(1.18) rotate(6deg); opacity: .78; }
+
+      0%,
+      100% {
+        transform: scale(.9) rotate(-6deg);
+        opacity: .35;
+      }
+
+      50% {
+        transform: scale(1.18) rotate(6deg);
+        opacity: .78;
+      }
     }
 
     .floating-layer {
@@ -182,7 +210,7 @@
       flex-direction: column;
 
       background: var(--card);
-      border: 1px solid rgba(255,255,255,.82);
+      border: 1px solid rgba(255, 255, 255, .82);
       border-radius: 34px;
 
       backdrop-filter: blur(16px);
@@ -190,7 +218,7 @@
 
       box-shadow:
         var(--shadow),
-        inset 0 0 0 1px rgba(255,255,255,.4);
+        inset 0 0 0 1px rgba(255, 255, 255, .4);
 
       overflow: hidden;
     }
@@ -239,7 +267,7 @@
     .step.active {
       display: flex;
       flex-direction: column;
-      animation: step-in .43s cubic-bezier(.2,.8,.25,1) both;
+      animation: step-in .43s cubic-bezier(.2, .8, .25, 1) both;
     }
 
     @keyframes step-in {
@@ -284,8 +312,15 @@
     }
 
     @keyframes character-wiggle {
-      0%, 100% { transform: rotate(-2deg) translateY(0); }
-      50% { transform: rotate(2deg) translateY(-5px); }
+
+      0%,
+      100% {
+        transform: rotate(-2deg) translateY(0);
+      }
+
+      50% {
+        transform: rotate(2deg) translateY(-5px);
+      }
     }
 
     h1 {
@@ -373,7 +408,7 @@
 
       box-shadow:
         0 11px 25px rgba(255, 98, 143, .30),
-        inset 0 1px rgba(255,255,255,.25);
+        inset 0 1px rgba(255, 255, 255, .25);
     }
 
     .btn-soft {
@@ -418,8 +453,15 @@
     }
 
     @keyframes bounce-soft {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     .step-title {
@@ -440,13 +482,13 @@
       padding: 24px 20px;
 
       background:
-        linear-gradient(145deg, rgba(255,255,255,.96), rgba(255,242,247,.94));
+        linear-gradient(145deg, rgba(255, 255, 255, .96), rgba(255, 242, 247, .94));
       border: 1.5px solid #f4d9e2;
       border-radius: 24px;
 
       box-shadow:
         0 12px 30px rgba(202, 110, 137, .10),
-        inset 0 0 0 2px rgba(255,255,255,.55);
+        inset 0 0 0 2px rgba(255, 255, 255, .55);
     }
 
     .schedule-label {
@@ -680,7 +722,7 @@
 
       text-align: left;
 
-      background: rgba(255,255,255,.82);
+      background: rgba(255, 255, 255, .82);
       border: 1px solid #f4ceda;
       border-radius: 18px;
     }
@@ -799,8 +841,8 @@
         <div class="character">🐰</div>
 
         <h1>
-          이번에 저랑<br>
-          <span class="highlight">데이트</span> 하실래요?
+          수인님, 저랑<br>
+          세번째 <span class="highlight">데이트</span> 하실래요?
         </h1>
 
         <p class="subtitle" id="introMessage"></p>
@@ -831,23 +873,13 @@
         <label class="schedule-label" for="dateInput">데이트 날짜</label>
         <div class="schedule-input-wrap">
           <span class="schedule-input-icon" aria-hidden="true">🌷</span>
-          <input
-            class="schedule-input"
-            id="dateInput"
-            type="date"
-            autocomplete="off"
-            required
-          />
+          <input class="schedule-input" id="dateInput" type="date" autocomplete="off" required />
         </div>
         <p class="picker-hint">오늘부터 선택할 수 있어요</p>
       </div>
 
       <div class="step-bottom">
-        <button
-          class="btn btn-primary next-btn"
-          id="dateNext"
-          type="button"
-          disabled>
+        <button class="btn btn-primary next-btn" id="dateNext" type="button" disabled>
           이날 만나요 💗
         </button>
       </div>
@@ -865,24 +897,13 @@
         <label class="schedule-label" for="timeInput">데이트 시간</label>
         <div class="schedule-input-wrap">
           <span class="schedule-input-icon" aria-hidden="true">💕</span>
-          <input
-            class="schedule-input"
-            id="timeInput"
-            type="time"
-            step="1800"
-            autocomplete="off"
-            required
-          />
+          <input class="schedule-input" id="timeInput" type="time" step="1800" autocomplete="off" required />
         </div>
         <p class="picker-hint">30분 단위로 선택할 수 있어요</p>
       </div>
 
       <div class="step-bottom">
-        <button
-          class="btn btn-primary next-btn"
-          id="timeNext"
-          type="button"
-          disabled>
+        <button class="btn btn-primary next-btn" id="timeNext" type="button" disabled>
           이 시간으로 정할게요 💕
         </button>
       </div>
@@ -968,8 +989,8 @@
   <script>
     const CONFIG = {
       introMessage:
-        "우리 둘이 좋은 시간을 보낼 수 있도록<br>" +
-        "만나고 싶은 날짜와 시간을 골라주세요 🌷"
+        "수인님을 만나러 용인으로 달려갈게요 💨💕<br>" +
+        "우리 만날 날짜와 시간을 골라주세요 🌷"
     };
 
 
@@ -1370,7 +1391,7 @@
 
     $("#copyBtn").addEventListener("click", async () => {
       const text =
-`데이트 약속 정했어요 💕
+        `데이트 약속 정했어요 💕
 
 📅 날짜
 ${formatDate(state.date)}
@@ -1481,4 +1502,5 @@ ${formatTime(state.time)}
     }
   </script>
 </body>
+
 </html>
